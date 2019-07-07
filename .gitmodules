@@ -1,0 +1,3 @@
+[submodule "sidebar-views"]
+	path = sidebar-views
+	url = https://github.com/sosacloud/sidebar-views.git

@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/sosacloud/fec-scott-proxy/issues"
   },
-  "homepage": "https://github.com/sosacloud/fec-scott-proxy#readme"
+  "homepage": "https://github.com/sosacloud/fec-scott-proxy#readme",
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  },
+  "dependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
 }
