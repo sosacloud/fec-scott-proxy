@@ -1,0 +1,19 @@
+{
+  "name": "proxy_server",
+  "version": "1.0.0",
+  "description": "Proxy Server",
+  "main": "./proxy-server/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sosacloud/fec-scott-proxy.git"
+  },
+  "author": "Scott Josephson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sosacloud/fec-scott-proxy/issues"
+  },
+  "homepage": "https://github.com/sosacloud/fec-scott-proxy#readme"
+}

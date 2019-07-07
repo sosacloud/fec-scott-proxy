@@ -1,0 +1,10 @@
+// Build proxy server to serve a static html
+  // Create package json
+
+// Create a webpack config to bundle files from my service
+
+// Import api and set up routing in the proxy
+
+// Startup my service's server to respond to api requests
+
+// Serve the bundle from the proxy
