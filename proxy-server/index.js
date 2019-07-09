@@ -1,16 +1,30 @@
 const express = require('express');
-const app = express();
 const fetch = require('node-fetch');
+const app = express();
 const sidebarPort = 3002;
 const localUrl = 'http://localhost';
 const port = 2800;
+var trackId = -1;
 
 
 app.use(express.static(__dirname + '/../client/dist'));
 
+
+app.get('/:id', (req, res) => {
+  if (req.params.id !== undefined) trackId = req.params.id;
+  res.redirect('/');
+});
+
+
 // RelatedTracks
 app.get('*', (req, res) => {
   let serviceUrl = `${localUrl}:${sidebarPort}${req.originalUrl}`;
+  if (req.originalUrl !== '/') {
+    trackId = -1;
+  }
+  if (req.originalUrl === '/api/track') {
+    serviceUrl = serviceUrl + '/' + trackId;
+  }
 
   fetch(serviceUrl, {
       method: 'GET'
@@ -26,9 +40,6 @@ app.get('*', (req, res) => {
     })
 
 })
-
-
-
 
 
 app.listen(port, () => {
