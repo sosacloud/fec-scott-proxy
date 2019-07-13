@@ -1,6 +1,9 @@
 module.exports = {
   mode: 'development',
-  entry: './sidebar-views/client/src/index.jsx',
+  entry: {
+    musicPlayer: './music-player-service/client/src/index.jsx',
+    sidebar: './sidebar-views/client/src/index.jsx'
+  },
   module: {
     rules: [{
       test: /\.jsx$/,
@@ -11,10 +14,13 @@ module.exports = {
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
+    }, {
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader']
     }]
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: __dirname + '/client/dist'
   }
 }

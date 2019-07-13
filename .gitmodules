@@ -1,3 +1,6 @@
 [submodule "sidebar-views"]
 	path = sidebar-views
 	url = https://github.com/sosacloud/sidebar-views.git
+[submodule "music-player-service"]
+	path = music-player-service
+	url = https://github.com/sosacloud/music-player-service.git
