@@ -2,8 +2,12 @@ const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
 const sidebarPort = 3002;
+const musicPlayerPort = 3003;
+const musicPlayerEndpoint = '/api/songs';
+const sidebarEndpoints = ['/api/track', '/api/user', '/api/track/likes'];
 const localUrl = 'http://localhost';
 const port = 2800;
+var servicePort;
 var trackId = -1;
 
 
@@ -18,12 +22,20 @@ app.get('/:id', (req, res) => {
 
 // RelatedTracks
 app.get('*', (req, res) => {
-  let serviceUrl = `${localUrl}:${sidebarPort}${req.originalUrl}`;
+  let serviceUrl;
   if (req.originalUrl !== '/') {
     trackId = -1;
   }
-  if (req.originalUrl === '/api/track') {
-    serviceUrl = serviceUrl + '/' + trackId;
+
+  if (sidebarEndpoints.some(path => req.originalUrl.includes(path))) {
+    servicePort = sidebarPort;
+    serviceUrl = `${localUrl}:${sidebarPort}${req.originalUrl}`
+    if (req.originalUrl === '/api/track') {
+      serviceUrl = serviceUrl + '/' + trackId;
+    }
+  } else if (req.originalUrl.includes(musicPlayerEndpoint)) {
+    servicePort = musicPlayerPort;
+    serviceUrl = `${localUrl}:${servicePort}${req.originalUrl}`
   }
 
   fetch(serviceUrl, {
