@@ -6,7 +6,7 @@ const musicPlayerPort = 3003;
 const musicPlayerEndpoint = '/api/songs';
 const sidebarEndpoints = ['/api/track', '/api/user', '/api/track/likes'];
 const localUrl = 'http://localhost';
-const port = 2800;
+const port = 2801;
 var servicePort;
 var trackId = -1;
 
@@ -55,5 +55,5 @@ app.get('*', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Now listening on ${port}. Visit http://localhost:2800/`)
+  console.log(`Now listening on ${port}. Visit http://localhost:2801/`)
 });
