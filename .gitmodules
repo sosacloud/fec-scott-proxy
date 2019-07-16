@@ -4,3 +4,6 @@
 [submodule "music-player-service"]
 	path = music-player-service
 	url = https://github.com/sosacloud/music-player-service.git
+[submodule "comments"]
+	path = comment-service
+	url = https://github.com/sosacloud/comment-service.git
